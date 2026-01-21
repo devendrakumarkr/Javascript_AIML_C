@@ -90,3 +90,4 @@ console.log("Helllo students!!")
 // div2.addEventListener('click',()=>{console.log("Clicked the Outer Div")},false)
 // btn.addEventListener('click',()=>{console.log("Clicked the Button")},false)
 
+console.log("this is a new code")
