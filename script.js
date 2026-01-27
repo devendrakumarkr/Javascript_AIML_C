@@ -90,4 +90,57 @@ console.log("Helllo students!!")
 // div2.addEventListener('click',()=>{console.log("Clicked the Outer Div")},false)
 // btn.addEventListener('click',()=>{console.log("Clicked the Button")},false)
 
-console.log("this is a new code")
+// console.log("this is a new code")
+
+// debugger
+// console.log(a)
+// // console.log(b)
+
+// var a=678
+// let b=567
+
+// console.log(a)
+// console.log(b)
+
+// function print(){
+//     let c=63
+//     console.log(c)
+//     console.log("inside fn")
+// }
+
+// print()
+
+// function greet(){
+//     var message="Hello"
+//     console.log(message)
+// }
+// greet()
+// console.log(message)
+// console.log(d)
+// debugger
+// function first(){
+//     second()
+// }
+// function second(){
+//     third()
+// }
+// function third(){
+//     console.trace()
+// }
+// first()
+
+// function infinite(){
+//     infinite()
+// }
+// infinite()
+
+
+// console.log(a)
+// let a=34645
+
+// let total=100
+// function calculate(){
+//     console.log(total)
+//     let total=50
+// }
+// calculate()
