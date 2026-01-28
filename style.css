@@ -10,3 +10,12 @@
     border-radius: 10px;
     
 }
+
+li{
+    width: 300px;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 5px;
+}

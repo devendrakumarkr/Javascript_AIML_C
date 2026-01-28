@@ -144,3 +144,66 @@ console.log("Helllo students!!")
 //     let total=50
 // }
 // calculate()
+
+
+// console.log("User presssed the submit button")
+// setTimeout(()=>{console.log("Verify credential")},1000)
+// console.log("Login to dashboard")
+
+
+// const id=setTimeout(()=>{
+//     alert("after 3 sec")
+// },3*1000)
+
+// clearTimeout(id)
+
+// const timerId=setInterval(()=>{
+//     console.log("After 3 sec")
+// },1000)
+// console.log(timerId)
+// setTimeout(()=>{
+//     clearInterval(timerId)
+// },10*1000)
+
+
+// let count=1
+
+// const timerId=setInterval(()=>{
+//     if(count===10)clearInterval(timerId)
+//     console.log(count)
+//     count+=1
+// },1000)
+
+
+// console.log("Before timout")
+// setTimeout(()=>{
+//     console.log("Inside timeout")
+// },0)
+// console.log("AFter timeout")
+
+const name=document.querySelector("#name")
+const btn=document.querySelector(".btn")
+const list=document.querySelector(".list")
+
+btn.addEventListener('click',()=>{
+
+    if(name.value==="")return
+    //creating element
+    const li=document.createElement('li')
+    const dlt=document.createElement('button')
+
+    //providing text
+    dlt.innerText="Delete"
+    li.innerText=name.value;
+
+    dlt.addEventListener('click',()=>{
+        list.removeChild(li)
+    })
+
+    //appending the element
+    list.appendChild(li)
+    li.appendChild(dlt)
+
+    //clearing text
+    name.value=""
+})
