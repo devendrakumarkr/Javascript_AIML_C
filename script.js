@@ -1,4 +1,4 @@
-console.log("Helllo students!!")
+// console.log("Helllo students!!")
 
 // let obj={
 //     name:"Alex",
@@ -181,29 +181,71 @@ console.log("Helllo students!!")
 // },0)
 // console.log("AFter timeout")
 
-const name=document.querySelector("#name")
-const btn=document.querySelector(".btn")
-const list=document.querySelector(".list")
+// const name=document.querySelector("#name")
+// const btn=document.querySelector(".btn")
+// const list=document.querySelector(".list")
 
-btn.addEventListener('click',()=>{
+// btn.addEventListener('click',()=>{
 
-    if(name.value==="")return
-    //creating element
-    const li=document.createElement('li')
-    const dlt=document.createElement('button')
+//     if(name.value==="")return
+//     //creating element
+//     const li=document.createElement('li')
+//     const dlt=document.createElement('button')
 
-    //providing text
-    dlt.innerText="Delete"
-    li.innerText=name.value;
+//     //providing text
+//     dlt.innerText="Delete"
+//     li.innerText=name.value;
 
-    dlt.addEventListener('click',()=>{
-        list.removeChild(li)
-    })
+//     dlt.addEventListener('click',()=>{
+//         list.removeChild(li)
+//     })
 
-    //appending the element
-    list.appendChild(li)
-    li.appendChild(dlt)
+//     //appending the element
+//     list.appendChild(li)
+//     li.appendChild(dlt)
 
-    //clearing text
-    name.value=""
+//     //clearing text
+//     name.value=""
+// })
+
+// console.log("Before timout")
+// setTimeout(()=>{
+//     console.log("Inside timeout")
+// },0)
+// console.log("AFter timeout")
+
+
+// function greet(xyz){  //higher order fn
+//     setTimeout(()=>{
+//         console.log("Hello Students!!")
+//         xyz(45)
+//     },2000)
+// }
+
+// function print(num){ //callback fn
+//     console.log("Total students are",num)
+// }
+
+// greet(print)
+
+
+const p=new Promise((res,rej)=>{
+    let done=false
+    setTimeout(()=>{
+        if(done){
+            res("Work is done!!")
+        }else{
+            rej("Work is not done")
+        }
+    },5000)
 })
+
+p.then((msg)=>{
+    console.log(msg)
+}).catch((err)=>{
+    console.log(err)
+}).finally(()=>{
+    console.log("Finally block")
+})
+
+console.log(p)
