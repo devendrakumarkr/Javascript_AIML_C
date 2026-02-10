@@ -228,24 +228,135 @@
 
 // greet(print)
 
+// console.log("Before Promise")
+// const p=new Promise((res,rej)=>{
+//     let done=true
+//     res({name:"Alex",age:34})
+    
+//     setTimeout(()=>{
+//         if(done){
+//             res({name:"Alex",age:34})
+//         }else{
+//             rej("Work is not done")
+//         }
+//     },5000)
+// })
 
-const p=new Promise((res,rej)=>{
-    let done=false
-    setTimeout(()=>{
-        if(done){
-            res("Work is done!!")
-        }else{
-            rej("Work is not done")
-        }
-    },5000)
+// p.then((msg)=>{
+//     console.log(msg)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("Finally block")
+// })
+
+// console.log("After Promise")
+
+
+// function doHomework(){
+//     const p=new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             let done=true
+//             if(done){
+//                 console.log("Homework is done")
+//                 res("Homework Complete")
+//             }else{
+//                 rej("Homework not complete")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// function eatDinner(){
+//     const p=new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             let done=true
+//             if(done){
+//                 console.log("Dinner is done")
+//                 res("Dinner Complete")
+//             }else{
+//                 rej("Dinner not complete")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// function gotoPlayground(){
+//     const p=new Promise((res,rej)=>{
+//         setTimeout(()=>{
+//             let done=false
+//             if(done){
+//                 console.log(" Went to Playground")
+//                 res("Playground Time")
+//             }else{
+//                 rej("Not allowed")
+//             }
+//         },2000)
+//     })
+//     return p
+// }
+
+// doHomework().then((msg)=>{
+//     console.log(msg)
+//     return eatDinner()
+// }).then((msg)=>{
+//     console.log(msg)
+//     return gotoPlayground()
+// }).then((msg)=>{
+//     console.log(msg)
+// }).catch((err)=>{
+//     console.log(err)
+// }).finally(()=>{
+//     console.log("Go to Sleep")
+// })
+
+
+// console.log("First Line")
+
+// setTimeout(()=>{
+//     console.log("Second Line")
+// },0)
+
+// const p=new Promise((res,rej)=>{
+//     res()
+// })
+// p.then(()=>{
+//     console.log("Third Line")
+// })
+// const p2=new Promise((res,rej)=>{
+//     res()
+// })
+// p2.then(()=>{
+//     console.log("Fourth Line")
+// })
+
+// console.log("Last Line")
+
+const form=document.querySelector('.form')
+const eventCards=document.querySelector('.cards')
+
+form.addEventListener('submit',(e)=>{
+    e.preventDefault()
+
+    let title=eventTitle.value
+    let date=eventDate.value
+    let cat=category.value
+    let desc=description.value
+
+    const card=document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML=`
+        <h3>${title}</h3>
+        <p> 🗓️${date}</p>
+        <button>${cat}</button>
+        <p>${desc}</p>
+    `
+    eventCards.appendChild(card)
+
 })
 
-p.then((msg)=>{
-    console.log(msg)
-}).catch((err)=>{
-    console.log(err)
-}).finally(()=>{
-    console.log("Finally block")
+document.addEventListener('keydown',(e)=>{
+    console.log(e.key)
 })
-
-console.log(p)

@@ -26,9 +26,41 @@
         </div>
     </div> -->
 
-    <input type="text" id="name" placeholder="Enter the name">
+    <!-- <input type="text" id="name" placeholder="Enter the name">
     <button class="btn">Add Students</button>
-    <div class="list"></div>
+    <div class="list"></div> -->
+
+    <div class="container">
+        <div class="eventForm">
+            <form class="form">
+                <label for="eventTitle">Event Title</label>
+                <input type="text" id="eventTitle">
+                <br>
+                <label for="eventDate">Event Date</label>
+                <input type="date" id="eventDate">
+                <br>
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="Conference">Conference</option>
+                    <option value="WorkShop">WorkShop</option>
+                    <option value="Meetup">Meetup</option>
+                    <option value="Webinar">Webinar</option>
+                    <option value="Social">Social</option>
+                </select>
+                <br>
+                <label for="description">Description</label>
+                <textarea id="description"></textarea>
+                <br>
+                <input type="submit" value="Add Event">
+            </form>
+        </div>
+        <div class="events">
+            <button>Clear All Events</button>
+            <button>Add Sample Events</button>
+            <div class="cards"></div>
+        </div>
+        <div class="domContainer"></div>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>
