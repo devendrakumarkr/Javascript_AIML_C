@@ -1,12 +1,11 @@
 import React,{useState} from 'react'
 
-function Article() {
+function Article(props) {
     const[count,setCount]=useState(0)
     const[age,setAge]=useState(0)
     const[name,setName]=useState("")
-    // let count=0
+
     const handleIncrement=()=>{
-        // count=count+1
         setCount(count+1)
         console.log(count)
     }
@@ -14,6 +13,7 @@ function Article() {
     <div>
       <h2>Article</h2>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores nemo obcaecati a quam nihil nobis enim quod cupiditate, ipsam sunt laborum vel numquam, sint accusantium. Vitae aliquam esse culpa.</p>
+      <h3>{props.data}</h3>
       <h2>{count}</h2>
       <button onClick={handleIncrement}>Increment</button>
     </div>
