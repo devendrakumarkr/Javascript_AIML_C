@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import ArtStyle from "../css/Article.module.css"
 // import styled from "styled-components"
 import styled from "@emotion/styled"
@@ -8,8 +8,14 @@ import { css } from '@emotion/react'
 function Article(props) {
     const[count,setCount]=useState(0)
     const[age,setAge]=useState(0)
-    const[name,setName]=useState("")
+    const[name,setName]=useState("Alex")
 
+    useEffect(()=>{
+      console.log("Component Mounted")
+      return ()=>{
+        console.log("Component Unmounted")
+      }
+    },[ name])
     const handleIncrement=()=>{
         setCount(count+1)
         console.log(count)
@@ -21,6 +27,8 @@ function Article(props) {
       <h3 style={{backgroundColor:"red"}}>{props.data}</h3>
       <h2>{count}</h2>
       <button className={ArtStyle.btn} onClick={handleIncrement}>Increment</button>
+      <h2>{name}</h2>
+      <button className='bg-yellow-900' onClick={()=>setName("John")}>Change Name</button>
       <Button>Click Me!</Button>
       <Button red >Click Again</Button>
       <button css={{backgroundColor:"green",color:"white",borderRadius:"10px",height:"30px",width:"150px",'&:hover':{backgroundColor:"blue"}}}>Css Prop Button</button>
