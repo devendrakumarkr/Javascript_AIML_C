@@ -3,6 +3,7 @@ import ArtStyle from "../css/Article.module.css"
 // import styled from "styled-components"
 import styled from "@emotion/styled"
 import { css } from '@emotion/react'
+import axios from "axios"
 
 
 function Article(props) {
@@ -16,6 +17,35 @@ function Article(props) {
         console.log("Component Unmounted")
       }
     },[ name])
+
+    useState(()=>{
+      // const fetchData=async()=>{
+      //   try{
+      //     const response=await fetch("https://dummyjson.com/products/222",{
+      //       method:"GET"
+      //     })
+      //     const data=await response.json()
+      //     console.log(data)
+      //   }catch(error){
+      //     console.log(error)
+      //   }
+      // }
+
+      const fetchData=async()=>{
+        try{
+          const response=await axios.get("https://dummyjson.com/products")
+          console.log(response.data)
+        }catch(error){
+          console.log(error)
+        }
+      }
+
+      fetchData()
+    },[])
+
+    
+
+
     const handleIncrement=()=>{
         setCount(count+1)
         console.log(count)
