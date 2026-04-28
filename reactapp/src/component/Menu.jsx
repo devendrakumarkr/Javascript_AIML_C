@@ -1,10 +1,18 @@
 import React ,{Component}from 'react'
 import { add as addition } from './utility'
 import style from "../css/Menu.module.css"
+import { Link, NavLink , useNavigate} from 'react-router-dom'
 // import ArtStyle from "../css/Article.module.css"
 
 function Menu() {
+
+  const navigate=useNavigate()
     console.log(addition(3,4))
+  const handleLogin=()=>{
+    console.log("Login Verified")
+    navigate("/article")
+
+  }
   return (
     <div>
       <h1>Menu</h1>
@@ -12,6 +20,11 @@ function Menu() {
         <li>Sports</li>
         <li>Entertainment</li>
         <li>Polititcs</li>
+        <Link className='bg-amber-100 text-black p-1 m-2' to="/article"><button>Article</button></Link>
+        <NavLink style={({isActive})=>({backgroundColor:isActive?"teal":""})} className='bg-amber-100 text-black p-1 m-2' to="/"><button>HomePage</button></NavLink>
+        <Link className='bg-amber-100 text-black p-1 m-2' to="/contact"><button>Contact</button></Link>
+
+        <button onClick={handleLogin}>Login</button>
 
       </ul>
     </div>
