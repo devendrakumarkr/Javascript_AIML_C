@@ -1,4 +1,5 @@
 import React from 'react'
+import Menu from './Menu'
 
 function Homepage() {
   const loggedin=true
@@ -11,7 +12,10 @@ function Homepage() {
 //         <button>Login</button>
 //     )
 //   }
-return loggedin?<button>Logout</button>:<button>Login</button>
+return (<>
+  {loggedin?<button>Logout</button>:<button>Login</button>}
+  <Menu/>
+  </>)
 }
 
 export default Homepage

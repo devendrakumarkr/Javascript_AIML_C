@@ -2,6 +2,7 @@ import React ,{Component}from 'react'
 import { add as addition } from './utility'
 import style from "../css/Menu.module.css"
 import { Link, NavLink , useNavigate} from 'react-router-dom'
+import Child from './Child'
 // import ArtStyle from "../css/Article.module.css"
 
 function Menu() {
@@ -25,7 +26,7 @@ function Menu() {
         <Link className='bg-amber-100 text-black p-1 m-2' to="/contact"><button>Contact</button></Link>
 
         <button onClick={handleLogin}>Login</button>
-
+        <Child/>
       </ul>
     </div>
   )
